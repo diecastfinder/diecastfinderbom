@@ -31,6 +31,17 @@
 		<java.version>17</java.version>
 	</properties>
 
+	<pluginRepositories>
+		<pluginRepository>
+			<id>oss.sonatype.org</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+			<snapshots>
+				<enabled>true</enabled>
+				<updatePolicy>always</updatePolicy>
+			</snapshots>
+		</pluginRepository>
+	</pluginRepositories>
+
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
@@ -123,6 +134,10 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
+					<layers>
+						<enabled>true</enabled>
+						<includeLayerTools>true</includeLayerTools>
+					</layers>
 					<excludes>
 						<exclude>
 							<groupId>org.projectlombok</groupId>
@@ -180,5 +195,4 @@
 <!--			</plugin>-->
 		</plugins>
 	</build>
-
 </project>
